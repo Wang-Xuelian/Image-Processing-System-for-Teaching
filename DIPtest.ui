@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DIPtestClass</class>
+ <widget class="QMainWindow" name="DIPtestClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1087</width>
+    <height>905</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DIPtest</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="ImageLocal">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>本地图像</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ImageCamera">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>20</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>拍摄图像</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Resize">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图像缩放</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BrightContrast">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>121</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>亮度和对比度</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Threshold">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>280</y>
+      <width>121</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图像阈值化</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Blur">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>390</y>
+      <width>121</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图像滤波</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ErodeDilate">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>510</y>
+      <width>121</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>形态学处理</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="OriginText">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>10</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>原图</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ProgressText">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>430</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>效果图</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="ImageArea_2">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>460</y>
+      <width>461</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="widgetResizable">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>457</width>
+       <height>367</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QScrollArea" name="ImageArea">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>40</y>
+      <width>461</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="widgetResizable">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>457</width>
+       <height>367</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QDoubleSpinBox" name="ResizeSpin">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>100</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="decimals">
+     <number>1</number>
+    </property>
+    <property name="minimum">
+     <double>0.100000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>20.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
+    <property name="value">
+     <double>1.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>261</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="ThreshCombo">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>280</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>THRESH_BINARY</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>THRESH_BINARY_INV</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>THRESH_TRUNC</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>THRESH_TOZERO</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>THRESH_TOZERO_INV</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_Bright">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>170</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>亮度</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Contrast">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>220</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>对比度</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="ContrastSpin">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>220</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="decimals">
+     <number>1</number>
+    </property>
+    <property name="minimum">
+     <double>0.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>10.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>1.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="BrightSpin">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>160</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="minimum">
+     <number>-100</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="singleStep">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Thresh_Type">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>280</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>类型</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Thresh">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>330</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>阈值</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="ThreshSpin">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>330</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="singleStep">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ThreshMax">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>330</y>
+      <width>61</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>最大值</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="ThreshMaxSpin">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>330</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="singleStep">
+     <number>10</number>
+    </property>
+    <property name="value">
+     <number>255</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Blur_Type">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>394</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>类型</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Blur_Size">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>450</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>核函数尺寸</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="BlurCombo">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>391</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>均值滤波</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>中值滤波</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>高斯滤波</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QSpinBox" name="BlurSizeSpin">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>451</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Morphology_Type">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>520</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>类型</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Morphology_Size">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>570</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>核函数尺寸</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="MorphologyCombo">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>511</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>腐蚀</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>膨胀</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>开运算</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>闭运算</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QSpinBox" name="MorphologySizeSpin">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>570</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="minimum">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <number>20</number>
+    </property>
+    <property name="value">
+     <number>3</number>
+    </property>
+   </widget>
+   <zorder>frame</zorder>
+   <zorder>ImageLocal</zorder>
+   <zorder>ImageCamera</zorder>
+   <zorder>Resize</zorder>
+   <zorder>BrightContrast</zorder>
+   <zorder>Threshold</zorder>
+   <zorder>Blur</zorder>
+   <zorder>ErodeDilate</zorder>
+   <zorder>OriginText</zorder>
+   <zorder>ProgressText</zorder>
+   <zorder>ImageArea_2</zorder>
+   <zorder>ImageArea</zorder>
+   <zorder>ResizeSpin</zorder>
+   <zorder>ThreshCombo</zorder>
+   <zorder>label_Bright</zorder>
+   <zorder>label_Contrast</zorder>
+   <zorder>ContrastSpin</zorder>
+   <zorder>BrightSpin</zorder>
+   <zorder>label_Thresh_Type</zorder>
+   <zorder>label_Thresh</zorder>
+   <zorder>ThreshSpin</zorder>
+   <zorder>label_ThreshMax</zorder>
+   <zorder>ThreshMaxSpin</zorder>
+   <zorder>label_Blur_Type</zorder>
+   <zorder>label_Blur_Size</zorder>
+   <zorder>BlurCombo</zorder>
+   <zorder>BlurSizeSpin</zorder>
+   <zorder>label_Morphology_Type</zorder>
+   <zorder>label_Morphology_Size</zorder>
+   <zorder>MorphologyCombo</zorder>
+   <zorder>MorphologySizeSpin</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1087</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="DIPtest.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>Resize</sender>
+   <signal>clicked()</signal>
+   <receiver>DIPtestClass</receiver>
+   <slot>on_Resize_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BrightContrast</sender>
+   <signal>clicked()</signal>
+   <receiver>DIPtestClass</receiver>
+   <slot>on_BrightContrast_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>203</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Threshold</sender>
+   <signal>clicked()</signal>
+   <receiver>DIPtestClass</receiver>
+   <slot>on_Threshold_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>360</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Blur</sender>
+   <signal>clicked()</signal>
+   <receiver>DIPtestClass</receiver>
+   <slot>on_Blur_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>93</x>
+     <y>460</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ErodeDilate</sender>
+   <signal>clicked()</signal>
+   <receiver>DIPtestClass</receiver>
+   <slot>on_ErodeDilate_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ImageLocal</sender>
+   <signal>clicked()</signal>
+   <receiver>DIPtestClass</receiver>
+   <slot>on_ImageLocal_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ResizeSpin</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Resize</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>198</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_Resize_clicked()</slot>
+  <slot>on_BrightContrast_clicked()</slot>
+  <slot>on_Threshold_clicked()</slot>
+  <slot>on_Blur_clicked()</slot>
+  <slot>on_ErodeDilate_clicked()</slot>
+  <slot>on_ImageLocal_clicked()</slot>
+  <slot>ResizeSpin_ValueChanged(double)</slot>
+ </slots>
+</ui>
